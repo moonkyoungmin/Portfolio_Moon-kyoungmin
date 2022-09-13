@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kyoungmin Moon PORTFOLIO</title>
+
+    <!-- swiper-slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fullpage.css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#project">PROJECT</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">REDESIGN</a></li>
+                            <li><a href="#">CLONE</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resume">RESUME</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <div id="fullpage">
+            <section id="home" class="section">
+                <h2>firstPage</h2>
+                <p>안녕하세요</p>
+                <br>
+                <p>문경민입니다.</p>
+            </section>
+
+            <section id="about" class="section">
+                <h2>secondPage</h2>
+            </section>
+
+            <!-- 가로 스크롤 -->
+            <section id="project" class="section">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slider">
+                            <img src="images/bg1.jpg" alt="bg">
+                        </div>
+                        <div class="swiper-slider">
+                            <img src="images/bg2.jpg" alt="bg">
+                        </div>
+                        <div class="swiper-slider">
+                            <p>Hello world</p>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+
+            <section id="project" class="section">
+                <h2>3rd</h2>
+            </section>
+
+            <section id="resume" class="section">
+                <h2>THANK YOU</h2>
+                <ul>
+                    <li>
+                        <a href="" target="_blank"><img src="" alt="blog"></a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank"><img src="" alt="git"></a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank"><img src="" alt="resume"></a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/fullpage.min.js"></script>    
+        <script>
+        //fullpage
+        var myFullpage = new fullpage('#fullpage', {
+            // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C', 'pink', 'hotpink', 'palevioletred'],
+            navigation: true,
+            navigationPosition: 'right',
+            scrollingSpeed: 700,
+        });
+
+        //Date
+        getDate();
+
+        function getDate() {
+            var result = "";
+            var year = new Date().getFullYear();
+            var month = new Date().getMonth() + 1; //getMonth 메서드는 (0부터 1월을 나타냅니다.)
+            var day = new Date().getDate();
+            result = year + '년 ' + month + '월 ' + day + '일';
+            document.getElementById('date').innerHTML = result;
+        };
+
+        new Swiper('.swiper-container', {
+            slidesPerView: 'auto', //한번에 보여줄 요소 갯수 지정. auto 로 설정해도 됨.
+            spaceBetween: 30, //슬라이드간 padding 값 30px 씩 떨어뜨려줌
+            loop: true, //loop 를 true 로 할경우 무한반복 슬라이드 
+            autoplay: {
+            delay: 2000, //2초에 한번씩 자동으로 슬라이드
+            },
+        });
+        </script>
+</body>
+</html>

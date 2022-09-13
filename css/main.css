@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+* {box-sizing: border-box;}
+
+/*배경 그라데이션*/
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#wrap{width: 100%;}
+
+
+/* ------------ header area ----------- */
+header{display: flex; justify-content: flex-end;}
+header nav ul{margin-top: 10px; display: flex; justify-content: space-between;}
+header nav ul li{padding: 10px 60px;}
+header nav ul li a{color: #fff; font-weight: bold; font-size: 18px;}
+header nav ul li a:hover{transition: all 0.3s; color: #0d47c5; background: rgba(255, 255, 255, 0.5);}
+
+/* Sub menu Area */
+header nav .menu li > .sub_menu{display: block; padding-top: 30px; display: none;}
+header nav .menu li > .sub_menu li{padding: 10px 0 20px 0;}
+header nav .menu li > .sub_menu li a{font-size: 16px;}
